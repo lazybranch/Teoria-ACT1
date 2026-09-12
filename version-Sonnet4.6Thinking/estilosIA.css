@@ -1,0 +1,615 @@
+/* ============================================================
+   estilosIA.css — Mascotas Perdidas · Ramiro Lavie
+   Paleta: piel claro (#F5E6D3), verde musgo suave (#7D9B76),
+           violeta pastel (#C4A8D4)
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-fondo:        #F5E6D3;
+  --color-musgo:        #7D9B76;
+  --color-musgo-oscuro: #5E7A58;
+  --color-violeta:      #C4A8D4;
+  --color-violeta-osc:  #A88CBD;
+  --color-blanco:       #FFFFFF;
+  --color-texto:        #3E3E3E;
+  --color-texto-claro:  #6B6B6B;
+  --color-borde-card:   #7D9B76;
+  --color-card-bg:      #FDFAF6;
+  --color-relleno-img:  #EDE0CE;
+  --radius-card:        14px;
+  --shadow-card:        0 4px 18px rgba(125, 155, 118, 0.18);
+  --font-principal:     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --transition:         0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--font-principal);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Ocultar radio buttons ---------- */
+.radio-tab {
+  display: none;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  background-color: var(--color-musgo);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.navbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 64px;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--color-blanco);
+}
+
+.navbar__brand-icon {
+  font-size: 1.6rem;
+}
+
+.navbar__brand-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navbar__links a {
+  display: inline-block;
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  border-radius: 22px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+
+.navbar__links a:hover,
+.navbar__links a:focus {
+  background-color: var(--color-violeta);
+  color: var(--color-blanco);
+  outline: none;
+}
+
+/* Hamburger (móvil) */
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--color-blanco);
+  border-radius: 6px;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  color: var(--color-blanco);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* ============================================================
+   HERO / HEADER
+   ============================================================ */
+.hero {
+  background: linear-gradient(135deg, var(--color-musgo) 0%, var(--color-musgo-oscuro) 100%);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.hero__emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.hero__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.hero__subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL WRAPPER
+   ============================================================ */
+.main-content {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ============================================================
+   SECCIÓN MASCOTAS — pestañas con radio buttons
+   ============================================================ */
+.seccion-mascotas {
+  scroll-margin-top: 80px;
+}
+
+.seccion-mascotas__titulo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-musgo-oscuro);
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+/* --- Tabs (labels de los radio buttons) --- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.6rem;
+  border-radius: 30px;
+  border: 2px solid var(--color-musgo);
+  background-color: transparent;
+  color: var(--color-musgo-oscuro);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  user-select: none;
+}
+
+.tab-label:hover {
+  background-color: var(--color-musgo);
+  color: var(--color-blanco);
+}
+
+/* Pestaña activa */
+#tab-perros:checked ~ .tabs .label-perros,
+#tab-gatos:checked  ~ .tabs .label-gatos {
+  background-color: var(--color-violeta);
+  border-color: var(--color-violeta-osc);
+  color: var(--color-blanco);
+  box-shadow: 0 3px 12px rgba(196,168,212,0.4);
+}
+
+/* --- Paneles de mascotas --- */
+.panel-mascotas {
+  display: none;
+}
+
+#tab-perros:checked ~ .panels .panel-perros,
+#tab-gatos:checked  ~ .panels .panel-gatos {
+  display: block;
+}
+
+.panel-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-violeta-osc);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel-titulo::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-violeta), transparent);
+  border-radius: 2px;
+  margin-left: 0.6rem;
+}
+
+/* --- Grid de tarjetas --- */
+.grid-mascotas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+}
+
+/* ============================================================
+   TARJETA DE MASCOTA
+   ============================================================ */
+.card-mascota {
+  background-color: var(--color-card-bg);
+  border: 2.5px solid var(--color-borde-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card-mascota:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(125, 155, 118, 0.28);
+}
+
+/* Zona de imagen con relleno (padding) interno */
+.card-mascota__img-wrapper {
+  background-color: var(--color-relleno-img);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-mascota__img-wrapper img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-borde-card);
+  display: block;
+}
+
+/* Área de texto de la tarjeta */
+.card-mascota__body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.card-mascota__nombre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-musgo-oscuro);
+}
+
+.card-mascota__desc {
+  font-size: 0.88rem;
+  color: var(--color-texto-claro);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Botón "+ info" */
+.card-mascota__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  color: var(--color-violeta-osc);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  align-self: flex-start;
+}
+
+.card-mascota__link:hover {
+  color: var(--color-musgo-oscuro);
+  border-bottom-color: var(--color-musgo-oscuro);
+}
+
+.card-mascota__link::before {
+  content: '+';
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ============================================================
+   SECCIÓN SOBRE NOSOTROS
+   ============================================================ */
+.seccion-sobre {
+  scroll-margin-top: 80px;
+  background-color: var(--color-blanco);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-card);
+  margin-top: 3rem;
+}
+
+.seccion-sobre__titulo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-musgo-oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.seccion-sobre__subtitulo {
+  font-size: 1rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 1.6rem;
+}
+
+.seccion-sobre__contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.sobre-texto p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--color-texto);
+  margin-bottom: 0.9rem;
+}
+
+.sobre-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.sobre-mapa {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border: 2px solid var(--color-violeta);
+}
+
+.mapa-iframe {
+  width: 100%;
+  height: 280px;
+  border: none;
+  display: block;
+}
+
+/* ============================================================
+   SECCIÓN CONTACTO
+   ============================================================ */
+.seccion-contacto {
+  scroll-margin-top: 80px;
+  background-color: var(--color-blanco);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-card);
+  margin-top: 3rem;
+}
+
+.seccion-contacto__titulo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-musgo-oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.seccion-contacto__subtitulo {
+  font-size: 1rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 1.8rem;
+}
+
+/* Formulario */
+.formulario {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 620px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-musgo-oscuro);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1.8px solid #C8D8C5;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-principal);
+  font-size: 0.95rem;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-musgo);
+  box-shadow: 0 0 0 3px rgba(125,155,118,0.18);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237D9B76' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.2rem;
+}
+
+.btn-enviar {
+  align-self: flex-start;
+  background-color: var(--color-musgo);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 30px;
+  padding: 0.65rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.btn-enviar:hover {
+  background-color: var(--color-musgo-oscuro);
+  transform: translateY(-2px);
+}
+
+.btn-enviar:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: var(--color-musgo);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 1.6rem 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.footer__text {
+  font-size: 0.92rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.footer__heart {
+  color: var(--color-violeta);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .seccion-sobre__contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-mascotas {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .card-mascota {
+    max-width: 100%;
+  }
+}
+
+/* Móvil */
+@media (max-width: 560px) {
+  .navbar__links {
+    display: none;
+    flex-direction: column;
+    gap: 0.2rem;
+    background-color: var(--color-musgo-oscuro);
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    z-index: 99;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  /* Truco CSS puro: checkbox para abrir menú */
+  #nav-toggle:checked ~ .navbar__links {
+    display: flex;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-label {
+    width: 200px;
+    justify-content: center;
+  }
+
+  .seccion-sobre,
+  .seccion-contacto {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1.2rem 2rem;
+  }
+
+  .grid-mascotas {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .card-mascota__img-wrapper img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .card-mascota__img-wrapper {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid-mascotas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   DIVISOR DECORATIVO
+   ============================================================ */
+.divisor {
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-violeta), transparent);
+  border-radius: 3px;
+  margin: 3rem 0;
+}

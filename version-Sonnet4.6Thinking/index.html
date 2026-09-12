@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mascotas Perdidas · La Plata</title>
+  <link rel="stylesheet" href="estilosIA.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       NAVEGACIÓN
+  ======================================================== -->
+
+  <!-- Checkbox oculto para menú hamburguesa en móvil -->
+  <input type="checkbox" id="nav-toggle" class="radio-tab" />
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="#mascotas" class="navbar__brand">
+        <span class="navbar__brand-icon">🐾</span>
+        <span class="navbar__brand-text">Mascotas Perdidas</span>
+      </a>
+
+      <label for="nav-toggle" class="navbar__toggle" aria-label="Abrir menú">☰</label>
+
+      <ul class="navbar__links">
+        <li><a href="#mascotas">Mascotas</a></li>
+        <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       HERO / ENCABEZADO
+  ======================================================== -->
+  <header class="hero">
+    <span class="hero__emoji">🐶🐱</span>
+    <h1 class="hero__title">¿Encontraste o perdiste una mascota?</h1>
+    <p class="hero__subtitle">
+      Aquí publicamos mascotas perdidas de La Plata y alrededores.
+      Revisá las fichas, compartí y ayudanos a reunirlas con sus familias.
+    </p>
+  </header>
+
+  <!-- ========================================================
+       CONTENIDO PRINCIPAL
+  ======================================================== -->
+  <main class="main-content">
+
+    <!-- ---- SECCIÓN MASCOTAS (radio buttons + tabs) ---- -->
+    <section id="mascotas" class="seccion-mascotas">
+      <h2 class="seccion-mascotas__titulo">🐾 Mascotas Perdidas</h2>
+
+      <!-- Radio buttons de navegación entre categorías -->
+      <input type="radio" name="categoria" id="tab-perros" class="radio-tab" checked />
+      <input type="radio" name="categoria" id="tab-gatos"  class="radio-tab" />
+
+      <!-- Pestañas visibles -->
+      <div class="tabs">
+        <label for="tab-perros" class="tab-label label-perros">🐶 Perros</label>
+        <label for="tab-gatos"  class="tab-label label-gatos" >🐱 Gatos</label>
+      </div>
+
+      <!-- Paneles de contenido -->
+      <div class="panels">
+
+        <!-- ===== PANEL PERROS ===== -->
+        <div class="panel-mascotas panel-perros">
+          <p class="panel-titulo">🐶 Perros perdidos</p>
+          <div class="grid-mascotas">
+
+            <!-- Perro 1 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/perro1.jpeg"
+                  alt="Perro 1 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Perro #1</h3>
+                <p class="card-mascota__desc">
+                  Macho. Extravíado en el barrio de La Plata.
+                  Si lo reconocés, por favor comunicate con nosotros.
+                </p>
+                <a
+                  href="../info/perro1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+            <!-- Perro 2 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/perro2.jpeg"
+                  alt="Perro 2 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Perro #2</h3>
+                <p class="card-mascota__desc">
+                  Hembra. Extravíada en zona céntrica de La Plata.
+                  Tiene collar y es muy dócil con las personas.
+                </p>
+                <a
+                  href="../info/perro2.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+            <!-- Perro 3 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/perro3.jpg"
+                  alt="Perro 3 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Perro #3</h3>
+                <p class="card-mascota__desc">
+                  Macho. Desapareció cerca del parque. Es amigable
+                  y responde a su nombre. Se le agradece cualquier aviso.
+                </p>
+                <a
+                  href="../info/perro3.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+          </div><!-- /grid-mascotas -->
+        </div><!-- /panel-perros -->
+
+        <!-- ===== PANEL GATOS ===== -->
+        <div class="panel-mascotas panel-gatos">
+          <p class="panel-titulo">🐱 Gatos perdidos</p>
+          <div class="grid-mascotas">
+
+            <!-- Gato 1 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/gato1.jpeg"
+                  alt="Gato 1 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Gato #1</h3>
+                <p class="card-mascota__desc">
+                  Macho castrado. Se escapó del hogar y no regresó.
+                  Es muy tranquilo y suele esconderse en lugares altos.
+                </p>
+                <a
+                  href="../info/gato1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+            <!-- Gato 2 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/gato2.jpeg"
+                  alt="Gato 2 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Gato #2</h3>
+                <p class="card-mascota__desc">
+                  Hembra. Muy tímida con extraños. Desapareció en el
+                  barrio norte de La Plata. Tiene manchas características.
+                </p>
+                <a
+                  href="../info/gato2.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+            <!-- Gato 3 -->
+            <article class="card-mascota">
+              <div class="card-mascota__img-wrapper">
+                <img
+                  src="../imagenes/gato3.jpeg"
+                  alt="Gato 3 — mascota perdida"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-mascota__body">
+                <h3 class="card-mascota__nombre">Gato #3</h3>
+                <p class="card-mascota__desc">
+                  Macho. Pelaje largo. Desapareció luego de un ruido fuerte.
+                  Si lo ves, no lo persigas; mejor avisá a la familia.
+                </p>
+                <a
+                  href="../info/gato3.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-mascota__link"
+                >info</a>
+              </div>
+            </article>
+
+          </div><!-- /grid-mascotas -->
+        </div><!-- /panel-gatos -->
+
+      </div><!-- /panels -->
+    </section>
+    <!-- /seccion-mascotas -->
+
+    <hr class="divisor" />
+
+    <!-- ---- SECCIÓN SOBRE NOSOTROS ---- -->
+    <section id="sobre" class="seccion-sobre">
+      <h2 class="seccion-sobre__titulo">👤 Sobre nosotros</h2>
+      <p class="seccion-sobre__subtitulo">Quién está detrás de este sitio</p>
+
+      <div class="seccion-sobre__contenido">
+        <div class="sobre-texto">
+          <p>
+            Hola, soy <strong>Ramiro Lavie</strong>, vecino de La Plata y amante de los
+            animales. Este sitio nació de la necesidad de tener un espacio
+            centralizado y accesible donde las personas puedan difundir y encontrar
+            mascotas extraviadas en nuestra ciudad.
+          </p>
+          <p>
+            Creo que con un poco de colaboración comunitaria podemos devolver muchas
+            mascotas a sus familias. Si encontrás un animal perdido o extraviaste el
+            tuyo, no dudes en contactarme: juntos lo vamos a resolver.
+          </p>
+          <p>
+            Actualmente el sitio cubre la zona de <strong>La Plata y alrededores</strong>,
+            provincia de Buenos Aires, Argentina.
+          </p>
+        </div>
+
+        <div class="sobre-mapa">
+          <iframe
+            src="https://maps.google.com/maps?q=La+Plata,+Buenos+Aires,+Argentina&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            class="mapa-iframe"
+            loading="lazy"
+            title="Mapa interactivo de la ciudad de La Plata"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <!-- /seccion-sobre -->
+
+    <hr class="divisor" />
+
+    <!-- ---- SECCIÓN CONTACTO ---- -->
+    <section id="contacto" class="seccion-contacto">
+      <h2 class="seccion-contacto__titulo">✉️ Contacto</h2>
+      <p class="seccion-contacto__subtitulo">
+        ¿Encontraste o perdiste una mascota? Completá el formulario y te
+        respondemos a la brevedad.
+      </p>
+
+      <form class="formulario" action="#" method="post">
+
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre y apellido"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono de contacto</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="(0221) 000-0000"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="tipo">¿Qué necesitás?</label>
+          <select id="tipo" name="tipo" required>
+            <option value="" disabled selected>Seleccioná una opción</option>
+            <option value="perdida">Reportar mascota perdida</option>
+            <option value="encontrada">Reportar mascota encontrada</option>
+            <option value="consulta">Consulta general</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Describí brevemente la situación: especie, color, zona, fecha..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje 🐾</button>
+
+      </form>
+    </section>
+    <!-- /seccion-contacto -->
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="footer">
+    <p class="footer__text">
+      © 2026 · Mascotas Perdidas La Plata · Hecho con
+      <span class="footer__heart">♥</span>
+      por <strong>Ramiro Lavie</strong>
+    </p>
+    <p class="footer__text" style="margin-top: 0.4rem; font-size: 0.82rem; opacity: 0.75;">
+      La Plata, Buenos Aires, Argentina
+    </p>
+  </footer>
+
+</body>
+</html>
