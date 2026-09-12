@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mascotas Perdidas La Plata | Red Comunitaria de Búsqueda</title>
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Encabezado Principal y Barra de Navegación
+       ========================================================================= -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-contenido">
+      <a href="#inicio" class="logo-marca">
+        <span class="logo-icono">🐾</span>
+        <div>
+          <span class="logo-texto">Mascotas Perdidas</span>
+          <span class="logo-subtexto">La Plata &bull; Red Solidaria</span>
+        </div>
+      </a>
+
+      <nav class="navegacion" aria-label="Navegación principal">
+        <ul class="nav-lista">
+          <li><a href="#mascotas" class="nav-enlace">Mascotas Perdidas</a></li>
+          <li><a href="#responsable" class="nav-enlace">Responsable</a></li>
+          <li><a href="#contacto" class="nav-enlace">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- =========================================================================
+         Sección Hero / Bienvenida
+         ========================================================================= -->
+    <section class="hero">
+      <div class="contenedor">
+        <span class="hero-insignia">Ayudanos a que vuelvan a su hogar</span>
+        <h1 class="hero-titulo">Red de Difusión de Mascotas Perdidas en La Plata</h1>
+        <p class="hero-descripcion">
+          Portal solidario para visibilizar y coordinar la búsqueda de perros y gatos extraviados en la ciudad.
+          Revisá las publicaciones activas o reportá una mascota para colaborar en su reencuentro.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Sección Principal: Mascotas Perdidas (Perros y Gatos con Radio Buttons)
+         ========================================================================= -->
+    <section id="mascotas" class="seccion seccion-mascotas">
+      <div class="contenedor">
+        <div class="seccion-encabezado">
+          <h2 class="seccion-titulo">Mascotas Perdidas</h2>
+          <p class="seccion-subtitulo">
+            Explorá las publicaciones organizadas por especie. Seleccioná una categoría con los selectores para visualizar únicamente los animales correspondientes. Hacé clic en "+ info" para abrir el PDF con los datos detallados de cada uno.
+          </p>
+        </div>
+
+        <!-- Sistema de Filtrado 100% Estático en HTML & CSS mediante Radio Buttons -->
+        <div class="sistema-categorias">
+          <p class="filtro-indicador-texto">Seleccionar categoría a mostrar:</p>
+
+          <!-- Radio button 1: Perros (Activo por defecto) -->
+          <input type="radio" id="categoria-perros" name="filtro-mascota" class="radio-categoria" checked>
+          <label for="categoria-perros" class="etiqueta-categoria etiqueta-perros">
+            <span class="etiqueta-icono">🐶</span>
+            <span>Perros</span>
+            <span class="etiqueta-badge">3</span>
+          </label>
+
+          <div class="salto-linea-movil"></div>
+
+          <!-- Radio button 2: Gatos -->
+          <input type="radio" id="categoria-gatos" name="filtro-mascota" class="radio-categoria">
+          <label for="categoria-gatos" class="etiqueta-categoria etiqueta-gatos">
+            <span class="etiqueta-icono">🐱</span>
+            <span>Gatos</span>
+            <span class="etiqueta-badge">3</span>
+          </label>
+
+          <!-- Grilla de Tarjetas: todas de dimensiones idénticas con imágenes uniformes -->
+          <div class="grilla-mascotas">
+
+            <!-- ===================== PERROS ===================== -->
+
+            <!-- Perro 1: Bruno -->
+            <article class="tarjeta-mascota tarjeta-perro">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/perro1.jpeg" alt="Fotografía de Bruno, perro Beagle perdido" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-perro">Perro 1</span>
+                  <span class="chip-recompensa">Recompensa: $100.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Bruno</h3>
+                <p class="tarjeta-raza">Raza: Beagle &bull; Macho mediano</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto tricolor (marrón claro, blanco y negro), orejas caídas. Lleva puesto collar negro de cuero. Visto en Plaza San Martín (calle 7 y 50).
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/perro1.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Bruno">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+            <!-- Perro 2: Roco -->
+            <article class="tarjeta-mascota tarjeta-perro">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/perro2.jpeg" alt="Fotografía de Roco, galgo atigrado perdido" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-perro">Perro 2</span>
+                  <span class="chip-recompensa">Recompensa: $75.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Roco</h3>
+                <p class="tarjeta-raza">Raza: Mestizo / Galgo &bull; Atigrado</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto con patrón atigrado marrón y negro, porte mediano a grande y contextura esbelta. Lleva un collar rosa. Visto en Diagonal 74 y 32.
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/perro2.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Roco">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+            <!-- Perro 3: Pongo -->
+            <article class="tarjeta-mascota tarjeta-perro">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/perro3.jpg" alt="Fotografía de Pongo, perro Dálmata perdido" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-perro">Perro 3</span>
+                  <span class="chip-recompensa">Recompensa: $150.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Pongo (Chichín)</h3>
+                <p class="tarjeta-raza">Raza: Dálmata &bull; Mediano a grande</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto blanco con manchas negras distintivas en cuerpo y orejas caídas. Responde a Pongo o Chichín. Visto por última vez en Calle 12 y 60.
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/perro3.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Pongo">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+            <!-- ===================== GATOS ===================== -->
+
+            <!-- Gato 1: Sombra -->
+            <article class="tarjeta-mascota tarjeta-gato">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/gato1.jpeg" alt="Fotografía de Sombra, gato negro perdido" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-gato">Gato 1</span>
+                  <span class="chip-recompensa">Recompensa: $90.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Sombra (Misi)</h3>
+                <p class="tarjeta-raza">Raza: Mestizo / Bombay &bull; Negro</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto negro azabache con pequeña mancha blanca en el pecho, ojos amarillos brillantes, tamaño mediano. Sin collar. Visto en Calle 19 y 51.
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/gato1.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Sombra">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+            <!-- Gato 2: Simona -->
+            <article class="tarjeta-mascota tarjeta-gato">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/gato2.jpeg" alt="Fotografía de Simona, gata naranja perdida" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-gato">Gato 2</span>
+                  <span class="chip-recompensa">Recompensa: $120.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Simona (Simi)</h3>
+                <p class="tarjeta-raza">Raza: Común Europeo &bull; Naranja</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto naranja claro con sutiles rayas atigradas, contextura delgada y tamaño pequeño-mediano. Lleva collar bordó. Vista en Av. 13 y 44.
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/gato2.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Simona">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+            <!-- Gato 3: Cleo -->
+            <article class="tarjeta-mascota tarjeta-gato">
+              <div class="tarjeta-imagen-marco">
+                <img src="../imagenes/gato3.jpeg" alt="Fotografía de Cleo, gata tricolor perdida" class="tarjeta-foto">
+              </div>
+              <div class="tarjeta-cuerpo">
+                <div class="tarjeta-etiquetas">
+                  <span class="chip-especie chip-gato">Gato 3</span>
+                  <span class="chip-recompensa">Recompensa: $80.000</span>
+                </div>
+                <h3 class="tarjeta-nombre">Cleo</h3>
+                <p class="tarjeta-raza">Raza: Mestizo / Tricolor &bull; Tabby</p>
+                <p class="tarjeta-descripcion">
+                  Pelo corto tricolor con patas y pecho blancos, lomo marrón atigrado y ojos claros, tamaño mediano. Sin collar. Vista en Calle 8 y 38.
+                </p>
+              </div>
+              <div class="tarjeta-pie">
+                <a href="../info/gato3.pdf" target="_blank" class="tarjeta-enlace-info" title="Ver ficha en PDF de Cleo">
+                  <span class="tarjeta-enlace-icono">+</span> info
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Sección: Responsable del Sitio (Ramiro Lavie) y Mapa de La Plata
+         ========================================================================= -->
+    <section id="responsable" class="seccion seccion-responsable">
+      <div class="contenedor">
+        <div class="seccion-encabezado">
+          <h2 class="seccion-titulo">Responsable del Sitio</h2>
+          <p class="seccion-subtitulo">
+            Conocé a la persona a cargo de la coordinación y administración de esta red comunitaria en La Plata.
+          </p>
+        </div>
+
+        <div class="responsable-cuadricula">
+          <!-- Información de Ramiro Lavie -->
+          <article class="responsable-tarjeta">
+            <div>
+              <div class="responsable-perfil-cabecera">
+                <div class="responsable-avatar" aria-label="Avatar de Ramiro Lavie">
+                  <span>RL</span>
+                </div>
+                <div>
+                  <h3 class="responsable-nombre">Ramiro Lavie</h3>
+                  <span class="responsable-cargo">Coordinador &amp; Responsable</span>
+                </div>
+              </div>
+              <p class="responsable-bio">
+                Ramiro Lavie coordina este espacio solidario y sin fines de lucro con el objetivo de brindar a los vecinos de La Plata un canal centralizado, ágil y visualmente accesible para publicar, difundir y localizar animales perdidos o avistados en la vía pública.
+              </p>
+              <ul class="responsable-datos">
+                <li><strong>Localidad:</strong> La Plata, Provincia de Buenos Aires</li>
+                <li><strong>Objetivo:</strong> Reencuentro y bienestar animal comunitario</li>
+                <li><strong>Alcance:</strong> Casco Urbano, Tolosa, Villa Elvira, Los Hornos, Gonnet y City Bell</li>
+                <li><strong>Contacto directo:</strong> ramiro.lavie.mascotas@laplata.org.ar</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Mapa de Google Maps mostrando La Plata -->
+          <div class="mapa-tarjeta">
+            <div class="mapa-encabezado">
+              <h3 class="mapa-titulo">Área de Cobertura: La Plata</h3>
+              <p class="mapa-descripcion">Mapa de referencia territorial para búsquedas y avistamientos activos.</p>
+            </div>
+            <div class="mapa-marco">
+              <iframe
+                src="https://maps.google.com/maps?q=La+Plata,+Buenos+Aires,+Argentina&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                class="mapa-iframe"
+                loading="lazy"
+                title="Mapa interactivo de la ciudad de La Plata"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Sección: Contacto y Formulario Sencillo
+         ========================================================================= -->
+    <section id="contacto" class="seccion seccion-contacto">
+      <div class="contenedor contacto-contenedor">
+        <div class="seccion-encabezado">
+          <h2 class="seccion-titulo">Contacto y Reportes</h2>
+          <p class="seccion-subtitulo">
+            ¿Perdiste o encontraste una mascota en La Plata? Completá este formulario para hacernos llegar la información y publicarla en la plataforma.
+          </p>
+        </div>
+
+        <form action="#" method="get" class="formulario-contacto">
+          <div class="formulario-fila">
+            <div class="campo-grupo">
+              <label for="nombre" class="campo-etiqueta">Nombre y Apellido *</label>
+              <input type="text" id="nombre" name="nombre" class="campo-input" placeholder="Ej: Juan Pérez" required>
+            </div>
+            <div class="campo-grupo">
+              <label for="email" class="campo-etiqueta">Correo Electrónico *</label>
+              <input type="email" id="email" name="email" class="campo-input" placeholder="tu-email@correo.com" required>
+            </div>
+          </div>
+
+          <div class="formulario-fila">
+            <div class="campo-grupo">
+              <label for="telefono" class="campo-etiqueta">Teléfono de Contacto</label>
+              <input type="tel" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 221-555-1234">
+            </div>
+            <div class="campo-grupo">
+              <label for="motivo" class="campo-etiqueta">Motivo de Contacto *</label>
+              <select id="motivo" name="motivo" class="campo-select" required>
+                <option value="">Seleccioná una opción...</option>
+                <option value="reportar-perdida">Reportar una mascota perdida</option>
+                <option value="reportar-encontrada">Informar sobre mascota encontrada / avistada</option>
+                <option value="actualizar-informacion">Actualizar datos de una publicación existente</option>
+                <option value="consulta-general">Mensaje para Ramiro Lavie</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="mensaje" class="campo-etiqueta">Detalles de la Mascota o Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="campo-textarea" placeholder="Describí las características del animal (raza, color, collar), zona donde fue visto por última vez (calles o plazas de La Plata) y cualquier dato de utilidad..." required></textarea>
+          </div>
+
+          <div class="formulario-acciones">
+            <span class="formulario-aviso">* Los campos marcados son obligatorios.</span>
+            <button type="submit" class="btn-enviar">Enviar Reporte</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Pie de Página (Footer)
+       ========================================================================= -->
+  <footer class="pie-pagina">
+    <div class="contenedor">
+      <div class="pie-contenido">
+        <div class="pie-bloque-info">
+          <h4>Mascotas Perdidas La Plata</h4>
+          <p>Sitio coordinado y administrado por Ramiro Lavie &bull; La Plata, Buenos Aires</p>
+        </div>
+        <nav aria-label="Enlaces del pie de página">
+          <ul class="pie-navegacion">
+            <li><a href="#mascotas" class="pie-enlace">Mascotas</a></li>
+            <li><a href="#responsable" class="pie-enlace">Responsable</a></li>
+            <li><a href="#contacto" class="pie-enlace">Contacto</a></li>
+            <li><a href="#inicio" class="pie-enlace">Subir &uarr;</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="pie-creditos">
+        <p>Actividad 1 de Teoría &bull; Proyecto de Software &bull; Facultad de Informática &bull; UNLP (2026)</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
